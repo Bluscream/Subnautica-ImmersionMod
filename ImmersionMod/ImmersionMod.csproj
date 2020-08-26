@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{97175EE6-5456-40BE-B10A-EFA3ADE4CF6F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ImmersionMod</RootNamespace>
+    <AssemblyName>ImmersionMod</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony" />
+    <Reference Include="0Harmony_Shim" />
+    <Reference Include="Assembly-CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="UnityEngine" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompInfo.cs" />
+    <Compile Include="Config\Config.cs" />
+    <Compile Include="Config\HudMode.cs" />
+    <Compile Include="Config\Options.cs" />
+    <Compile Include="Config\WarningLevels.cs" />
+    <Compile Include="ControlInput.cs" />
+    <Compile Include="HideHudController_ScreenshotManager_LateUpdatePatch.cs" />
+    <Compile Include="HudModeManager.cs" />
+    <Compile Include="ImmersionMod_MainCamera_UpdatePatch.cs" />
+    <Compile Include="LayerInfo.cs" />
+    <Compile Include="LayerStack.cs" />
+    <Compile Include="Mod.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QPatch.cs" />
+    <Compile Include="SimpleJSON\JSON.cs" />
+    <Compile Include="SimpleJSON\JSONArray.cs" />
+    <Compile Include="SimpleJSON\JSONBool.cs" />
+    <Compile Include="SimpleJSON\JSONLazyCreator.cs" />
+    <Compile Include="SimpleJSON\JSONNode.cs" />
+    <Compile Include="SimpleJSON\JSONNodeType.cs" />
+    <Compile Include="SimpleJSON\JSONNull.cs" />
+    <Compile Include="SimpleJSON\JSONNumber.cs" />
+    <Compile Include="SimpleJSON\JSONObject.cs" />
+    <Compile Include="SimpleJSON\JSONString.cs" />
+    <Compile Include="SimpleJSON\JSONTextMode.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
